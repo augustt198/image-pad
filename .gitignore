@@ -16,6 +16,6 @@
 /tmp
 
 # Redis info
-redis.yml
+#redis.yml
 
 redirect.txt
