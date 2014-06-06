@@ -1,3 +1,5 @@
+require 'rmagick'
+
 class ImageController < ApplicationController
 
   def index
