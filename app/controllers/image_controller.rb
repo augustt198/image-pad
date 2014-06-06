@@ -40,7 +40,7 @@ class ImageController < ApplicationController
 
   def color
     color = params[:c]
-    color = 'red' unless %w(red green blue yellow).include?(color)
+    color = 'white' unless %w(red green blue yellow white).include?(color)
     REDIS.set(ip + ':color', color)
     redirect_to REDIRECT_URL
   end
