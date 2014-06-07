@@ -50,6 +50,11 @@ class ImageController < ApplicationController
     redirect_to REDIRECT_URL
   end
 
+  def space
+    REDIS.append(ip + ':text', ' ')
+    redirect_to REDIRECT_URL
+  end
+
   def back
     text = REDIS.get(ip + ':text')
     text = text ? text[0..-2] : ''
