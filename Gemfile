@@ -7,7 +7,7 @@ gem 'rails', '4.0.4'
 gem 'redis'
 
 # Images
-gem 'rmagick', require: 'RMagick'
+gem 'rmagick', '2.13.2', require: 'RMagick'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
