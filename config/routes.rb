@@ -8,5 +8,6 @@ ImgPad::Application.routes.draw do
   match '/add' => 'image#add', via: [:get]
   match '/color' => 'image#color', via: [:get]
   match '/back' => 'image#back', via: [:get]
+  match '/space' => 'image#space', via: [:get]
 
 end
