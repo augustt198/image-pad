@@ -9,6 +9,8 @@ class ImageController < ApplicationController
     text = REDIS.get(ip + ':text')
     color = REDIS.get(ip + ':color')
     color = 'white' unless color
+    puts "Text: #{text}"
+    puts "Color: #{color}"
     unless text
       text = ''
       REDIS.set(ip + ':text', text)
@@ -22,6 +24,7 @@ class ImageController < ApplicationController
       self.pointsize = 18
     end
     wrapped = line_wrap text, 40
+    puts "Wrapped text: #{wrapped}"
     draw.annotate(img, 0, 0, 18, 60, wrapped) do
       self.pointsize = 12
     end
