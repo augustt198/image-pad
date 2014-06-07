@@ -45,7 +45,7 @@ class ImageController < ApplicationController
     else
       letter = ''
     end
-    letter = '' unless (letter =~ /[A-Za-z]/) == 0
+    letter = '' unless (letter =~ /[A-Za-z0-9]/) == 0
     REDIS.append(ip + ':text', letter)
     redirect_to REDIRECT_URL
   end
