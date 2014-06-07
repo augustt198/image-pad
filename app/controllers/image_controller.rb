@@ -25,20 +25,11 @@ class ImageController < ApplicationController
     end
     wrapped = line_wrap text, 40
     puts "Wrapped text: #{wrapped}"
-    draw.annotate(img, 0, 0, 18, 60, wrapped) do
+    draw.annotate(img, 0, 0, 18, 60, "#{line_wrap(text, 40)}") do
       self.pointsize = 12
     end
     img.format = 'png'
-    send_data img.to_blob, filename: 'rekt.png', disposition: 'inline', type: 'image/png'
-  end
-
-  def show
-    text = REDIS.get(request.remote_ip)
-    text = '' unless text
-    params[:s] = '' unless params[:s]
-    text += params[:s].slice(0, 1)
-    REDIS.set(request.remote_ip, text)
-    render json: JSON.pretty_generate({:text => text})
+    send_data img.to_blob, filename: 'text.png', disposition: 'inline', type: 'image/png'
   end
 
   def color
