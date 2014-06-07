@@ -21,7 +21,7 @@ class ImageController < ApplicationController
       self.font_family = "Consolas"
       self.pointsize = 18
     end
-    wrapped = line_wrap text, 40
+    wrapped = line_wrap text, 75
     unless wrapped.strip.empty?
       draw.annotate(img, 0, 0, 18, 60, "#{line_wrap(text, 40)}") do
         self.pointsize = 12
