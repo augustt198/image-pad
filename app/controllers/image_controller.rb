@@ -12,7 +12,7 @@ class ImageController < ApplicationController
     puts "Text: #{text}"
     puts "Color: #{color}"
     unless text
-      text = ''
+      text = ' '
       REDIS.set(ip + ':text', text)
     end
     img = Magick::Image.new(500, 250) do
