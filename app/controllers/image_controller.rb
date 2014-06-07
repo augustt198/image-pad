@@ -25,7 +25,7 @@ class ImageController < ApplicationController
     end
     wrapped = line_wrap text, 40
     puts "Wrapped text: #{wrapped}"
-    draw.annotate(img, 0, 0, 18, 60, wrapped) do
+    draw.annotate(img, 0, 0, 18, 60, "DEBUG") do
       self.pointsize = 12
     end
     img.format = 'png'
